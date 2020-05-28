@@ -10,6 +10,8 @@ Small script to monitor the files in your Obsidian-directory on Windows (or any 
 2. Once the trigger is found it takes all lines with the keyword you specify and sends those one by one by to an email your specify. The script will capture all in the same line before the keyword and send as subject with the note name in the body.
 3. The script then removes the trigger and changes the keyword to another keyword you specify
 
+![Demo](https://github.com/Gnopps/ObsidianTodo/blob/master/demo.gif)
+
 ### Requirements
 - The details for your email's SMTP-server. This can be found easily for most providers (like Fastmail, Gmail, etc.)
 - Possibility to execute Powershell (any recent Windows-version I think)

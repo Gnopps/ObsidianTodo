@@ -26,6 +26,7 @@ Small script to monitor the files in your Obsidian-directory on Windows (or any 
 		- Program: "powershell.exe"
 		- Arguments: "PowerShell -noexit -windowstyle hidden -file C:\Scripts\ServiceToMonitorForTodo.ps1"
 	- Conditions: All off
+4. Restart your computer.
 
 ### Setup
 These variables need to be setup.

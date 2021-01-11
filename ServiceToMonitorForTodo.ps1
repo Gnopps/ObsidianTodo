@@ -28,7 +28,7 @@ Register-ObjectEvent $fsw Changed -SourceIdentifier FileChanged -Action {
 #    Write-Host "The file '$name' was $changeType at $timeStamp" -fore green 
    if ($fileContent -match $trigger) {
     $fileContent | Select-String -Pattern ".*$($lookfor)" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $secpasswd = ConvertTo-SecureString $loginpassword -AsPlainText -Force; $cred = New-Object System.Management.Automation.PSCredential ($loginuser, $secpasswd); Send-MailMessage -To $sendto -From $sendfrom  -Subject $_.Value -Body $name -SmtpServer $smtpserver -Port $smtpport -Credential $cred -UseSsl
-    $fileContent | ForEach-Object { $_ -replace $lookfor, $replaceto -replace " $($trigger)", '' -replace $trigger, '' } | Set-Content $folder$name } 
+    $fileContent | ForEach-Object { Start-Sleep -s 1; $_ -replace $lookfor, $replaceto -replace " $($trigger)", '' -replace $trigger, '' } | Set-Content $folder$name } 
     }}
     
 # To stop the monitoring, run the following commands:
